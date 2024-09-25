@@ -45,9 +45,10 @@ so you can quickly see it in action.
 
 ### Usage
 
-Once the plugin is installed and enabled, it will print "Hello, World!" each time you open a new terminal session, as well as log the same message to syslog.
+Once the plugin is installed and enabled, it will print a hello-world message each time
+you open a new terminal session, as well as log the same message to syslog.
 
-To manually trigger these messages:
+To manually trigger these messages open a new terminal or source the config:
 
 - stdout
   ```bash
@@ -57,6 +58,14 @@ To manually trigger these messages:
   ```bash
   2024-09-25T09:57:21.108876+02:00 system helloworld.plugin.zsh: hej from helloworld.plugin.zsh
   ```
+
+## Important Note while startup
+
+If you see the following warning: `[WARNING]: Console output during zsh initialization detected.`,
+it is expected behavior for this demo project. The plugin prints to stdout and syslog, which can trigger this warning.
+
+For production or real-world projects, it is recommended to avoid printing to the console
+during Zsh initialization or log output to files/syslog to prevent this warning from appearing.
 
 ## Customization
 
